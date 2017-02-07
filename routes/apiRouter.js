@@ -3,8 +3,6 @@ const express = require('express')
 // Get the Search model. basically access the data base.
 const Search = require('./../models/imageSearchModel')
 // Require the controllers
-// const latestController = require('./../controllers/latestController.js')
-// const searchController = require('./../controllers/searchController.js')
 // make sure to call the function other wise it won't work.
 const apiController = require('./../controllers/apiController.js')(Search)
 

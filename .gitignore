@@ -1,3 +1,4 @@
 node_modules
 .googleApi.js
 .mlabInfos.js
+.env

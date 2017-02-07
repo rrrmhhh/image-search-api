@@ -17,25 +17,10 @@ const apiController = (Search) => {
     const latestSite = new Search(searchM)
     latestSite.save((err)=> {
       if(err) throw err;
-      // console.log(searchDB + 'Saved!');
     })
-    let client = new ImagesClient(keys.cseId, keys.apiKey)
+    let client = new ImagesClient(process.env.GOOGLE_CSEID, process.env.GOOGLE_APIKEY)
     client.search(search, {page: page})
       .then(function (images) {
-          /*
-          [{
-              "url": "http://steveangello.com/boss.jpg",
-              "type": "image/jpeg",
-              "width": 1024,
-              "height": 768,
-              "size": 102451,
-              "thumbnail": {
-                  "url": "http://steveangello.com/thumbnail.jpg",
-                  "width": 512,
-                  "height": 512
-              }
-          }]
-           */
            res.send(images)
       })
 

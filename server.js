@@ -6,11 +6,11 @@ const mongoose = require('mongoose')
 const apiRouter = require('./routes/apiRouter')
 // require pug as a view template
 const pug = require('pug')
-// import mlab credentials.
-const mlabInfo = require('./.mlabInfos')
+// require process.env
+require('dotenv').config()
 // Connect to the data base
-// const db = mongoose.connect('mongodb://127.0.0.1:27017/latestSitesDB')
-const db = mongoose.connect(mlabInfo.uri)
+const uri = process.env.MONGOLAB_URI
+const db = mongoose.connect(uri)
 // Start the server.
 app.set('port', (process.env.PORT || 3000))
 app.listen(app.get('port'), ()=> {
