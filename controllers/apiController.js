@@ -1,5 +1,4 @@
 const ImagesClient = require('google-images')
-const keys = require('./../.googleApi')
 
 const apiController = (Search) => {
 
